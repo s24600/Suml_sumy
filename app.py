@@ -52,7 +52,7 @@ def main():
                 
         dummy_prediction = 42  # placeholder
 
-        st.success(f"Predicted Time of exerciese in a week: {dummy_prediction}")
+        st.success(f"Predicted Time of exerciese in a week: {model.predict(new_entry)}")
         print(new_entry)
 
 if __name__ == "__main__":
