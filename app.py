@@ -2,12 +2,15 @@ import streamlit as st
 import model_prediction as model
 
 def main():
+    # Set up the Streamlit app
     st.set_page_config(page_title="Time Week Prediction", layout="centered")
     st.title("Prediction of time spent at the gym weekly App")
     st.write("Enter the required fitness data below and click **Predict** to view the result.")
 
+    # Create input columns
     col1, col2 = st.columns(2, gap="large")
 
+    # Input fields for user data
     with col1:
         age = st.number_input("Age", min_value=1, max_value=120, value=25, step=1)
         weight = st.number_input("Weight (kg)", min_value=1.0, max_value=200.0, value=70.0, step=0.1)
@@ -33,6 +36,7 @@ def main():
         w_strength = st.checkbox("Strength", value=False)
         w_yoga = st.checkbox("Yoga", value=False)
 
+    # Predict button
     if st.button("Predict"):
         new_entry = {
             "Age": age,
