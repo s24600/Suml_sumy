@@ -173,8 +173,5 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
-# autogluon models
-AutogluonModel/
-
 # database files
 *.csv
