@@ -1,0 +1,6 @@
+streamlit
+pandas
+numpy
+autogluon
+kagglehub
+scikit-learn
