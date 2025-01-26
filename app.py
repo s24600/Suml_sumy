@@ -1,4 +1,5 @@
 import streamlit as st
+import model_prediction as model
 
 def main():
     st.set_page_config(page_title="Time Week Prediction", layout="centered")
@@ -49,8 +50,6 @@ def main():
             "Workout_Type_Strength": w_strength,
             "Workout_Type_Yoga": w_yoga,
         }
-                
-        dummy_prediction = 42  # placeholder
 
         st.success(f"Predicted Time of exerciese in a week: {model.predict(new_entry)}")
         print(new_entry)
