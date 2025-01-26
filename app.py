@@ -50,7 +50,6 @@ def main():
             "Workout_Type_Strength": w_strength,
             "Workout_Type_Yoga": w_yoga,
         }
-
         st.success(f"Predicted Time of exerciese in a week: {model.predict(new_entry)}")
         print(new_entry)
 
