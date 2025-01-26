@@ -1,3 +1,7 @@
+"""
+This script sets up a Streamlit web application for predicting the time spent at the gym weekly.
+"""
+
 import streamlit as st
 import model_prediction as model
 

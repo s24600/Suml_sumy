@@ -22,5 +22,3 @@ predictor.delete_models(models_to_keep='best', delete_from_disk=True, dry_run=Fa
 
 # Evaluate the model
 y_pred = predictor.predict(test_data.drop(columns=[LABEL]))
-
-

@@ -1,3 +1,7 @@
+"""
+This script loads a trained model and makes predictions based on user input.
+"""
+
 import pandas as pd
 from autogluon.tabular import TabularPredictor
 
