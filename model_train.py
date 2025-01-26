@@ -17,9 +17,9 @@ train_data, test_data = train_test_split(data, test_size=0.1, random_state=101)
 SAVE_PATH = "AutogluonModel"
 
 LABEL = "Time_Week"
-predictor = TabularPredictor(label=LABEL, path=SAVE_PATH).fit(train_data)
+predictor = TabularPredictor(label=LABEL, path=SAVE_PATH).fit(train_data, presets = 'high_quality')
 y_pred = predictor.predict(test_data.drop(columns=[LABEL]))
 
-def get_best_model_name():
-    """Function to get the best model name from the leaderboard"""
-    return predictor.leaderboard(test_data).iloc[0, 0]
+best_model_name = predictor.leaderboard(test_data).iloc[0, 0]
+with open(f"{SAVE_PATH}/best_model_name.txt", "w") as f:
+    f.write(best_model_name)

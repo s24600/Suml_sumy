@@ -1,6 +1,6 @@
 import pandas as pd
 import pickle
-from model_train import get_best_model_name
+
 
 experience_level_dict = {
     "Beginner": 1,
@@ -10,7 +10,9 @@ experience_level_dict = {
 }
 
 def predict(entry):
-    best_model_name = get_best_model_name()
+    with open("AutogluonModel/best_model_name.txt", "r") as f:
+        best_model_name = f.read().strip()
+    
     model = pickle.load(open(f"AutogluonModel/models/{best_model_name}/model.pkl", 'rb'))
 
     gender = entry.pop("Gender", None)
