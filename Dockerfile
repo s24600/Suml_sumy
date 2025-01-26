@@ -6,9 +6,9 @@ EXPOSE 8501
 COPY app.py ./
 COPY model_prediction.py ./
 COPY requirements.txt ./
-COPY model_train.py ./
 COPY prepare_csv.py ./
 COPY run.sh ./
+COPY AutogluonModel/ ./AutogluonModel/
 
 RUN pip install -r requirements.txt
 

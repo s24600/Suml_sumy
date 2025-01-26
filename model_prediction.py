@@ -1,6 +1,5 @@
 import pandas as pd
-import pickle
-
+from autogluon.tabular import TabularPredictor
 
 experience_level_dict = {
     "Beginner": 1,
@@ -10,10 +9,8 @@ experience_level_dict = {
 }
 
 def predict(entry):
-    with open("AutogluonModel/best_model_name.txt", "r") as f:
-        best_model_name = f.read().strip()
     
-    model = pickle.load(open(f"AutogluonModel/models/{best_model_name}/model.pkl", 'rb'))
+    predictor = TabularPredictor.load("AutogluonModel")
 
     gender = entry.pop("Gender", None)
     if gender:
@@ -33,7 +30,7 @@ def predict(entry):
     entry = {k:[v] for k,v in entry.items()}
     df = pd.DataFrame(entry)
 
-    y_unknown = model.predict(df)[0]
+    y_unknown = predictor.predict(df)[0]
     y_unknown = f'{y_unknown:.2f}'
 
     return y_unknown
