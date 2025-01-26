@@ -37,3 +37,6 @@ d) Pobranie i Uruchomienie Obrazu z Docker Hub
 
 3. Wejdź na strone poprzez:
 	localhost:8501
+
+d) Uruchomienie poprzez przeglądaekę, wpisz adres:
+	83.9.166.247:53106
