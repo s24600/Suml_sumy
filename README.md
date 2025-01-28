@@ -33,7 +33,7 @@ d) Pobranie i Uruchomienie Obrazu z Docker Hub
 
 2. Uruchom pobrany obraz:
 
-        docker run -p 8501:8501 kacper24600/sumlprojekt:sumy1.1
+        docker run -p 8501:8501 kacper24600/sumlprojekt:sumy1.2
 
 3. Wejdź na strone poprzez:
 	localhost:8501
